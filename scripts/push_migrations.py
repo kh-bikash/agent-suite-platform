@@ -34,7 +34,10 @@ def main() -> int:
         if clean:
             print(clean, file=stream, end="")
     if result.returncode:
-        print(f"Supabase migration command failed with status {result.returncode}", file=sys.stderr)
+        print(
+            f"Supabase migration command failed with status {result.returncode}",
+            file=sys.stderr,
+        )
     return result.returncode
 
 
