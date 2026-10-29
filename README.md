@@ -1,12 +1,23 @@
 # Agent Suite Platform
 
-Shared Supabase schema and operational checks for the 12 independent agent applications in this workspace. Each application has its own GitHub repository and Vercel URL, while this repository owns the **single ordered migration history** for their shared Supabase project.
+## About
+
+This repository holds the shared account and database setup for the agent apps. Each product has its own source repository and deployment, but apps that need a user account or saved data can use the same Supabase project. Keeping the database migrations here gives the team one ordered history to review and apply.
+
+### What it does
+
+- Defines private document storage for Citation Grounded RAG and conversation memory for Persistent Conversation Agent.
+- Gives each signed-in user access only to their own rows through database policies.
+- Provides scripts for applying migrations, checking permissions, and configuring a model provider on Vercel.
+- Documents how to test two-user isolation before a new data feature goes live.
+
+This is infrastructure, not a user-facing app. The RAG migrations are live; the conversation migration is prepared but still needs to be applied after the database password rotation. No credentials belong in this repository.
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-    Users[Users] --> Apps[12 separate Vercel apps]
+    Users[Users] --> Apps[Independent agent apps]
     Apps --> Auth[Supabase Auth]
     Apps --> API[Supabase Data API]
     API --> RLS[Row-level security]
