@@ -13,6 +13,25 @@ This repository holds the shared account and database setup for the agent apps. 
 
 This is infrastructure, not a user-facing app. The RAG migrations are live; the conversation migration is prepared but still needs to be applied after the database password rotation. No credentials belong in this repository.
 
+## The products
+
+Each product has its own repository and README with setup instructions, an architecture diagram, examples, and operating notes.
+
+| Product | What someone can use it for | Current access |
+|---|---|---|
+| [Structured Output Agent](https://github.com/kh-bikash/structured-output-agent) | Turn text into validated fields or check existing JSON. | Hosted web app, CLI, local browser |
+| [Citation Grounded RAG](https://github.com/kh-bikash/citation-grounded-rag) | Ask questions about private documents and inspect cited quotes. | Hosted web app, CLI, local browser |
+| [ReAct Planning Agent](https://github.com/kh-bikash/react-planning-agent) | Answer document questions through a limited sequence of tool calls. | CLI, local browser |
+| [Capability Tool Orchestrator](https://github.com/kh-bikash/capability-tool-orchestrator) | Run permitted tools together and handle conflicting results. | CLI, local browser |
+| [Persistent Conversation Agent](https://github.com/kh-bikash/persistent-conversation-agent) | Save and recall conversation context across sessions. | CLI, local browser; hosted deployment pending |
+| [Human Approval Agent](https://github.com/kh-bikash/human-approval-agent) | Hold actions for human review with a durable audit trail. | CLI, local browser |
+| [Cost Aware Agent Router](https://github.com/kh-bikash/cost-aware-agent-router) | Select models within a task budget and review cost decisions. | CLI, local browser |
+| [Event Automation Agent](https://github.com/kh-bikash/event-automation-agent) | Process signed webhooks with retries and dead-letter recovery. | Self-hosted service, CLI, operator browser |
+| [Multi Agent Debate](https://github.com/kh-bikash/multi-agent-debate) | Compare proposals, critiques, votes, and a synthesis. | Hosted pilot, CLI, local browser |
+| [Self Reflective Agent](https://github.com/kh-bikash/self-reflective-agent) | Revise answers against rules and inspect evaluation history. | CLI, local browser |
+| [Observable Production Agent](https://github.com/kh-bikash/observable-production-agent) | Run an agent API with metrics, tracing, and canary rollback. | Self-hosted service, CLI, operator browser |
+| [Open Agent Patterns](https://github.com/kh-bikash/open-agent-patterns) | Recover from transient endpoint failures and benchmark the pattern. | CLI, local browser, Python library |
+
 ## Architecture
 
 ```mermaid
